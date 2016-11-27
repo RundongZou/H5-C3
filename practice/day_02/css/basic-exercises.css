@@ -1,0 +1,57 @@
+/*
+* @Author: Rundong Zou
+* @Date:   2016-11-22 15:33:39
+* @Last Modified by:   Marte
+* @Last Modified time: 2016-11-22 17:18:01
+*/
+body,div,ol,ul,li,a,input,h1,h2,h3,h4,h5,h6,p{
+    margin:0;
+    padding:0;
+}
+li,ul,ol{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+body{
+    background-color:rgba(220,220,220,.5);
+    font-family:"微软雅黑";
+}
+[class^="box"]{
+    margin:0 auto;
+    margin-top:30px;
+    width:100px;
+    height:100px;
+    border:1px solid #f66;
+    transition:all 800ms;
+    //transition:all 500ms linear 1s; //第一个时间是运动过程的时间，第二个时间是延迟多久执行， 如果是这样的话：transition:all 500ms linear，1s;在逗号之前就结束，也就是说不会延迟1秒，而是直接用500ms的时间完成运动
+    //老师还讲了这一种方法，暂时没用到，先把基础的属性练熟了再说:transition:width 500ms linear 1s,height 500ms linear 1s;
+}
+
+
+/*单位deg为度的意思，正数为顺时针旋转，负数为逆时针旋转*/
+.box-1{
+    transform-origin:100% 100%;
+}
+.box-1:hover{
+     transform:rotate(30deg);
+     /*transform-origin:100%,100%;
+     我发现，旋转基准点如果这样写，是没有用的，他还是会默认从中心点开始*/
+     /*transform-origin:100% 100%;*//*如果是写在hover里面，那么鼠标放上去的时候，会以默认的中心点和自己设置的中心点同时起作用，所以会有一种“飞了”的感觉;但是，如果放在单独的div(例如.box-1)里面写的话，就会按照自己自定义的旋转基准点，而不会同时起作用了。*/
+}
+
+
+
+/*参数表示移动距离，单位px，一个参数时：表示水平方向的移动距离；两个参数时：第一个参数表示水平方向的移动距离，第二个参数表示垂直方向的移动距离。*/
+.box-2:hover{
+    transform:translate(30px,60px);
+}
+/*参数表示倾斜角度，单位deg 一个参数时：表示水平方向的倾斜角度； 两个参数时：第一个参数表示水平方向的倾斜角度，第二个参数表示垂直方向的倾斜角度。*/
+.box-3:hover{
+    transform:skew(45deg,10deg);
+}
+/*缩放----不会失真*/
+.box-4:hover{
+    transform:scale(.5);
+}

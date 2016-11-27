@@ -1,0 +1,68 @@
+/*
+* @Author: Marte
+* @Date:   2016-11-22 17:05:38
+* @Last Modified by:   Marte
+* @Last Modified time: 2016-11-22 22:34:04
+*/
+
+/* ============================================================
+   样式重置
+   ============================================================ */
+
+body,p,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,fieldset,legend,input,select,textarea,button,th,td,blockquote,address,pre{margin:0;padding:0;}
+h1,h2,h3,h4,h5,h6,input,textarea,select,button,label{font-size:100%;vertical-align:middle;}
+ul,dl,ol{list-style:none;}
+img,fieldset{border:none;}
+img{display:inline-block;overflow:hidden;vertical-align:top;}
+em,address{font-style:normal;}
+sup,sub{vertical-align:baseline;}
+table{border-collapse:collapse;border-spacing:0;}
+q:before{content:"";}
+q:after{content:"";}
+button{cursor:pointer;}
+textarea{word-wrap:break-word;resize:none;}
+
+/*=========================================================
+    页面
+===========================================================*/
+.charector-wrap{position: relative;width: 180px;height: 300px;left: 50%;margin-left: -90px;}
+[class^=speed-],.btn-paused{display: block;color: #000;text-align: center;padding: 5px;margin-bottom: 5px;margin-left: 50px;text-decoration: none;width: 50px;border: 1px solid #ccc;float: left;}
+.btn-paused{color: red;}
+.charector{
+    position: absolute;
+    width:180px;
+    height:300px;
+    background:url(../img/charector.png) 0 0 no-repeat;
+    -webkit-animation-timing-function:step-end; /*马上跳到动画每一结束帧的状态*/
+    -webkit-animation-iteration-count:infinite; /*动画无限循环*/
+
+    //把这两句放在这里面写，能保证页面刚刷新的时候，就有一个默认的速度（中速），另外，如果
+    -webkit-animation-name:speed;
+    -webkit-animation-duration:800ms;
+}
+@-webkit-keyframes speed{
+     0% {background-position: 0 0;}
+    14.3% {background-position: -180px 0;}
+    28.6% {background-position: -360px 0;}
+    42.9% {background-position: -540px 0;}
+    57.2% {background-position: -720px 0;}
+    71.5% {background-position: -900px 0;}
+    85.8% {background-position: -1080px 0;}
+    100% {background-position: 0 0;}
+}
+
+.fast{/*speed:fast*/
+    -webkit-animation-name:speed;
+    -webkit-animation-duration:600ms;
+}
+.normal{/*speed:normal*/
+    -webkit-animation-name:speed;
+    -webkit-animation-duration:800ms;
+}
+.slow{/*speed:slow*/
+    -webkit-animation-name:speed;
+    -webkit-animation-duration:1000ms;
+}
+.paused{/*speed:normal*/
+    -webkit-animation-play-state:paused;
+}

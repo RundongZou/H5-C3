@@ -1,0 +1,5 @@
+animate
+fast:400ms,
+normal:600ms,
+slow:800ms
+计算差值，然后，，

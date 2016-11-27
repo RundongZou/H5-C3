@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>玩转canvas</title>
+</head>
+<body>
+<canvas id="canvasDom" width="800" height="600" >
+
+</canvas>
+<script>
+    //var canvasDom = document.getElementById("canvasDom");
+    //var context = canvasDom.getContext("2d");
+    function draw1(id){
+        var canvas = document.getElementById(id);
+        if(canvas === null){
+            return false;
+        }
+        var context = canvas.getContext("2d");
+        //在不设置fillStyle的情况下，默认fillStyle=black
+        context.fillRect(0,0,100,100);
+        //在不设置strokeStyle的情况下，默认strokeStyle=black
+        context.strokeRect(0,120,100,100);
+
+        //设置纯色
+        context.fillStyle = "red";
+        context.strokeStyle = "blue";
+        context.fillRect(120,0,100,100);
+        context.strokeRect(120, 120, 100, 100);
+
+        //设置透明度
+        context.fillStyle = "rgba(255,0,0,.2)";
+        context.strokeStyle = "rgba(0,255,0,.2)";
+        context.fillRect(240, 0, 100, 100);
+        context.strokeRect(240, 120, 100, 100);
+
+        //清除矩形区域
+        context.clearRect(50, 50, 200, 200);
+
+    }
+   // draw1("canvasDom");
+
+   //圆弧
+   // function draw2(id){
+   //      var canvas = document.getElementById(id);
+   //      if(canvas === null){
+   //          return false;
+   //      }
+   //      var context = canvas.getContext("2d");
+   //      context.beginPath();
+   //      //最后一个参数，false表示顺时针，true表示逆时针,如果不写，默认是逆时针
+   //      context.arc(200,150,100,0,1.5*Math.PI);
+   //      //context.closePath();
+   //      context.fillStyle = 'rgba(0,255,0,.25)';
+   //      context.fill();
+
+   // }
+   // draw2('canvasDom');
+
+    function draw3(id){
+
+        var canvas = document.getElementById(id);
+        if(canvas === null){
+            return false;
+        }
+        var context = canvas.getContext("2d");
+        var n  = 0;//??
+
+        //左侧1/4圆弧
+       context.beginPath();
+        context.arc(100,150,50,0,Math.PI/2);
+        context.fillStyle = 'rgba(255,0,0,.25)';
+        //context.fill();
+        context.strokeStyle = 'rgba(255,0,0,.25)';
+        context.closePath();
+        context.stroke();
+
+        //右侧1/4圆弧
+        //context.beginPath();
+        context.arc(300,150,50,0,Math.PI/2,false);
+        context.fillStyle = 'rgba(255,0,0,.25)';
+        //context.fill();
+        context.strokeStyle = 'rgba(255,0,0,.25)';
+        context.closePath();
+        context.stroke();
+
+   }
+   draw3('canvasDom');
+
+
+</script>
+</body>
+</html>

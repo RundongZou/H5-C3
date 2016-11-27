@@ -1,0 +1,22 @@
+[
+    {
+        "name":"桔子",
+        "color":"orange",
+        "number":"180"
+    },
+    {
+        "name":"苹果",
+        "color":"red",
+        "number":"60"
+    },
+    {
+        "name":"葡萄",
+        "color":"purple",
+        "number":"320"
+    },
+    {
+        "name":"猕猴桃",
+        "color":"green",
+        "number":"220"
+    }
+]
