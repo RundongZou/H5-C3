@@ -1,0 +1,50 @@
+/*
+* @Author: Marte
+* @Date:   2016-11-22 20:59:00
+* @Last Modified by:   Marte
+* @Last Modified time: 2016-11-22 22:08:34
+*/
+/* ============================================================
+   样式重置
+   ============================================================ */
+
+body,p,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,fieldset,legend,input,select,textarea,button,th,td,blockquote,address,pre{margin:0;padding:0;}
+h1,h2,h3,h4,h5,h6,input,textarea,select,button,label{font-size:100%;vertical-align:middle;}
+ul,dl,ol{list-style:none;}
+img,fieldset{border:none;}
+img{display:inline-block;overflow:hidden;vertical-align:top;}
+em,address{font-style:normal;}
+sup,sub{vertical-align:baseline;}
+table{border-collapse:collapse;border-spacing:0;}
+q:before{content:"";}
+q:after{content:"";}
+button{cursor:pointer;}
+textarea{word-wrap:break-word;resize:none;}
+
+/*=========================================================
+    页面
+===========================================================*/
+.ball{
+    width:80px;
+    height:80px;
+    border-radius: 50%;
+    /*0 0,0 100%表示的是坐标*/
+    background:-webkit-gradient(linear,0 0,0 100% ,from(red),to(blue));
+    position:absolute;
+    left:100px;
+    top:200px;
+    -webkit-animation:animations 4s linear infinite;
+    animation:animations 4s linear infinite;
+}
+@-webkit-keyframes animations{
+    0%{-webkit-transform:translate(0,0);}
+    12%{-webkit-transform:translate(160px,-50px);}
+    25%{-webkit-transform:translate(400px,-100px);}
+    38%{-webkit-transform:translate(640px,-50px);}
+    50%{-webkit-transform:translate(800px,0);}
+    62%{-webkit-transform:translate(640px,50px);}
+    75%{-webkit-transform:translate(400px,100px);}
+    87%{-webkit-transform:translate(160px,50px);}
+    100%{-webkit-transform:translate(0,0);}
+}
+x`

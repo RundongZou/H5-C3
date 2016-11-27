@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>webapp</title>
+    <link rel="stylesheet" type="text/css" href="../css/webapp.css">
+</head>
+<body>
+    <div class="app show0">
+        <div class="wrap">
+            <section class="page"></section>
+            <section class="page">
+                <div class="ball">
+
+                </div>
+            </section>
+            <section class="page"></section>
+            <section class="page"></section>
+            <section class="page"></section>
+        </div>
+        <nav class="nav">
+            <a class="dot hot"></a>
+            <a class="dot"></a>
+            <a class="dot"></a>
+            <a class="dot"></a>
+            <a class="dot"></a>
+        </nav>
+        <nav class="dot-tips">
+            <div class="dot-wrap">
+                <mark class="dot-tip">1111</mark>
+            </div>
+            <div class="dot-wrap">
+                <mark class="dot-tip">222</mark>
+            </div>
+            <div class="dot-wrap">
+                <mark class="dot-tip">文案文案</mark>
+            </div>
+            <div class="dot-wrap">
+                <mark class="dot-tip">文案133</mark>
+            </div>
+            <div class="dot-wrap">
+                <mark class="dot-tip">这是问啊啊啊啊啊</mark>
+            </div>
+        </nav>
+    </div>
+
+    <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+
+<script>
+    var page={
+        cssClass:{
+            app:'app show',
+            hot:'hot',   //导航栏的热点样式
+            move:'move'
+        },
+        init:function(){
+            this.$dots = $('a.dot');
+            this.$app = $('div.app');
+            this.$dottip = $('mark.dot-tip');
+            this.render();
+        },
+        render:function(){
+            var that = this;
+            this.$dots.click(function(){
+                that.$dots.removeClass(that.cssClass.hot);
+                $(this).addClass(that.cssClass.hot);
+                that.$app.attr('class',that.cssClass.app+$(this).index());
+            });
+
+            this.$dots.hover(function(){
+                that.$dottip.eq($(this).index()).addClass("move")
+            },function(){
+                  that.$dottip.removeClass("move")
+            })
+        }
+    }
+    page.init();
+
+</script>
+
+</body>
+</html>

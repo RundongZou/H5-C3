@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>小球曲线运动</title>
+    <style type="text/css" media="screen">
+        div{
+            width:40px;
+            height:40px;
+            background-color:blue;
+            position: absolute;
+            left:100px;
+            top:100px;
+            border-radius:50%;
+        }
+        @keyframes bimg1 {
+          0% {top: 0;}
+          100% {top: 300px;}
+        }
+        @keyframes bimg2 {
+          0%  {left: 0;}
+          100% {left: 300px;}
+        }
+         #item {
+          animation: bimg1 3s infinite cubic-bezier(0,0.44,1,0.5),bimg2 3s infinite cubic-bezier(0.64,0.2,1,0.5);
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="item">
+
+    </div>
+</body>
+</html>

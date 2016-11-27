@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>canvas绘制图表</title>
+    <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+</head>
+<body>
+    <canvas id="demo" width="600" height="500"> 此处显示，说明不能识别此标签。 </canvas>
+    <script type="text/javascript">
+    //第一步：获取canvas元素
+    var canvasDom = document.getElementById("demo");
+    //第二步：获取上下文
+    var context = canvasDom.getContext('2d');
+    //第三步：开始绘制
+    context.beginPath();
+    //绘制基本的x,y轴
+    context.moveTo(50, 40);
+    context.lineTo(50, 450);
+    context.lineTo(500, 450);
+
+    context.font = '16px Arial';
+
+    for(var i = 0 ; i < 8; i++){
+        context.moveTo(50, 400-i*50);
+        context.lineTo(40,400-i*50);
+    }
+    context.fillText(50,20,406);
+    for(var i = 1; i < 8;i++){
+        context.fillText(50*(i+1), 12,406-(i*50));
+    }
+
+    // context.fillStyle="orange";
+    // context.fillRect(90, 270, 50, 180)
+    // context.fillText('桔子', 100, 470);
+
+    // context.fillStyle="red";
+    // context.fillRect(180, 390, 50, 60)
+    // context.fillText('苹果', 190, 470);
+
+    // context.fillStyle="purple";
+    // context.fillRect(270, 130, 50, 320)
+    // context.fillText('葡萄', 280, 470);
+
+    // context.fillStyle="green";
+    // context.fillRect(360, 230, 50, 220)
+    // context.fillText('猕猴桃', 360, 470);
+
+    $.get("fruits.json",function(data){
+        for(var i = 0; i < data.length; i ++){
+            context.fillStyle=data[i].color;
+            context.fillRect(90*(i+1), 450-data[i].number, 50, data[i].number)
+            context.fillText(data[i].name, 90*(i+1)+10, 470);
+        }
+    })
+
+
+    context.stroke();
+    </script>
+</body>
+</html>
