@@ -1,0 +1,63 @@
+@import "config.less";
+/*函数*/
+.fn-set-color(@c){
+    color:@c;
+}
+
+.box1{
+    background-color:@bgColorb;
+    width:400px;
+    height:400px;
+    margin-top:20px;
+
+    ul{
+        background-color:blue;
+        .item{
+            line-height: 40px;
+            .loop(@i) when (@i > 0){
+                a:nth-child(@{i}){
+                    .loop(@i - 1);
+                    color:#fff;
+                    display: block;
+                    width:(10px * @i);
+                    height:40px;
+                }
+            }
+            .loop(4);
+            .link{
+                /*.fn-set-color(#000);*/
+                &:hover{
+                    color:red;
+                }
+                &:nth-of-type(2){
+                    color:#000;
+                }
+            }
+        }
+    }
+}
+
+/*复用*/
+.box2{
+    .box1;
+    background-color:red;
+    /*.img{
+        color:red;
+        &-wrap{
+            font-size:20px;
+        }
+    }*/
+    @prefix:img;
+    .@{prefix}{
+        color:red;
+        background-color:#fc0;
+        &-wrap{
+            font-size:20px;
+            &:before{
+                @fnord:"I am Zou.";
+                @var: "fnord";
+                content:@@var;
+            }
+        }
+    }
+}
