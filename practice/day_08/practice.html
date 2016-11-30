@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>前端工程化-练习</title>
+    <script src="sea.js"></script>
+    <script src="jsTemplate/seajs-text.js"></script>
+</head>
+<body>
+<a href="" class="first">AAA</a>
+<a href="" class="second">BBB</a>
+<script>
+    seajs.config({
+        //设置路径，方便跨目录调用
+        paths:{
+            'cdn':'http://cdn.bootcss.com'
+        },
+        //设置别名，方便调用
+        alias:{
+            'jquery':'cdn/jquery/3.1.1/jquery.js',
+            'handlebars':'./jsTemplate/handlebars.min.js'
+        }
+    });
+</script>
+<script>
+    seajs.use(['./a'],function(amodule){
+        amodule.aaafn();
+    });
+</script>
+</body>
+</html>
