@@ -1,0 +1,109 @@
+/*函数*/
+.box1 {
+  background-color: #667788;
+  width: 400px;
+  height: 400px;
+  margin-top: 20px;
+}
+.box1 ul {
+  background-color: blue;
+}
+.box1 ul .item {
+  line-height: 40px;
+}
+.box1 ul .item a:nth-child( 4) {
+  color: #fff;
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+.box1 ul .item a:nth-child( 4) a:nth-child( 3) {
+  color: #fff;
+  display: block;
+  width: 30px;
+  height: 40px;
+}
+.box1 ul .item a:nth-child( 4) a:nth-child( 3) a:nth-child( 2) {
+  color: #fff;
+  display: block;
+  width: 20px;
+  height: 40px;
+}
+.box1 ul .item a:nth-child( 4) a:nth-child( 3) a:nth-child( 2) a:nth-child( 1) {
+  color: #fff;
+  display: block;
+  width: 10px;
+  height: 40px;
+}
+.box1 ul .item .link {
+  /*.fn-set-color(#000);*/
+}
+.box1 ul .item .link:hover {
+  color: red;
+}
+.box1 ul .item .link:nth-of-type(2) {
+  color: #000;
+}
+/*复用*/
+.box2 {
+  background-color: #667788;
+  width: 400px;
+  height: 400px;
+  margin-top: 20px;
+  background-color: red;
+  /*.img{
+        color:red;
+        &-wrap{
+            font-size:20px;
+        }
+    }*/
+}
+.box2 ul {
+  background-color: blue;
+}
+.box2 ul .item {
+  line-height: 40px;
+}
+.box2 ul .item a:nth-child( 4) {
+  color: #fff;
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+.box2 ul .item a:nth-child( 4) a:nth-child( 3) {
+  color: #fff;
+  display: block;
+  width: 30px;
+  height: 40px;
+}
+.box2 ul .item a:nth-child( 4) a:nth-child( 3) a:nth-child( 2) {
+  color: #fff;
+  display: block;
+  width: 20px;
+  height: 40px;
+}
+.box2 ul .item a:nth-child( 4) a:nth-child( 3) a:nth-child( 2) a:nth-child( 1) {
+  color: #fff;
+  display: block;
+  width: 10px;
+  height: 40px;
+}
+.box2 ul .item .link {
+  /*.fn-set-color(#000);*/
+}
+.box2 ul .item .link:hover {
+  color: red;
+}
+.box2 ul .item .link:nth-of-type(2) {
+  color: #000;
+}
+.box2 .img {
+  color: red;
+  background-color: #fc0;
+}
+.box2 .img-wrap {
+  font-size: 20px;
+}
+.box2 .img-wrap:before {
+  content: "I am Zou.";
+}
